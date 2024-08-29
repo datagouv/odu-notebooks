@@ -8,8 +8,6 @@ WORK_DIR=/home/onyxia/work
 REPO_URL=https://github.com/datagouv/odu-notebooks.git
 git clone --depth 1 $REPO_URL $WORK_DIR
 
-
-
 # Install additional packages from requirements.txt
 REQUIREMENTS_FILE=${WORK_DIR}/requirements.txt
 [ -f $REQUIREMENTS_FILE ] && pip install -r $REQUIREMENTS_FILE
