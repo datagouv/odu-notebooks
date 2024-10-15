@@ -46,6 +46,11 @@ def load_table_from_resource_id(resource_id, sep=';', _file_and_format=None, **k
             f"{DATAGOUV_URL}fr/datasets/r/{resource_id}",
             **kwargs,
         )
+    elif _format in ["xls", "xlsx"]:
+        return pd.read_excel(
+            f"{DATAGOUV_URL}fr/datasets/r/{resource_id}",
+            **kwargs,
+        )
     return pd.read_csv(
         f"{DATAGOUV_URL}fr/datasets/r/{resource_id}" if resource_id else _file_and_format[0],
         sep=sep,
